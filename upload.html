@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <?xml version="1.0" encoding="utf-8"?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload | Clash of Clans Layouts</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="global-style.css">
+        <link rel="stylesheet" href="form-style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+
+        <!-- Nav -->
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/coc-logo.png" width="100px" alt="WreckNoFear logo">
+                    </a></div>
+                <ul class="menu-items">
+                    <div class="icon cancel-btn">
+                        <i class="material-symbols-outlined">close</i>
+                    </div>
+                    <li>
+                        <a href="index.html">
+                            <img class="fold-menu-logo" src="images/coc-logo.png" width="100px" alt="WreckNoFear logo">
+                        </a>
+                    </li>
+                    <li><a href="upload.html" class="navbar-btn">Upload layout</a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="material-symbols-outlined">menu</i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="divider"></div>
+
+        <div class="panel" id="about">
+            <h2 class="panel-heading">Upload a layout</h2>
+            <p class="panel-content">Complete the form below to upload a layout!</p>
+        </div>
+
+        <div id="submitted">
+            Form Submitted!
+            <button onclick="resetForm()">Ok</button>
+        </div>
+
+        <div id="form-wrapper">
+            <form id="contact-form" onsubmit="submitHandler(event)" onchange="loadFile(event)">
+                <label for="discord-username">What is your Clash username?</label>
+                <input type="text" id="discord-username" required autocomplete="off">
+
+                <!-- Visa selection -->
+                <p class="inline-title">Select the layout you are uploading:</p>
+                <group class="inline-radio">
+                    <div><input type="radio" id="reason" name="reason" value="BB" checked><label class="inline-label">Builder Base</label></div>
+                    <div><input type="radio" id="reason" name="reason" value="Request"><label class="inline-label">Town Hall</label></div>
+                </group>
+
+                <label for="file">Upload your layout screenshot:</label>
+                <input type="file" id="file" accept="image/*" required autocomplete="off">
+                <img id="imgPre">
+
+                <label for="link">Upload your layout link (optional):</label>
+                <input type="url" id="link" autocomplete="off">
+
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+
+        <div class="divider"></div>
+
+        <script type="text/javascript" src="scripts.js"></script>
+        <script type="text/javascript" src="webhook-api.js"></script>
+
+    </body>
+    <footer class="footer">
+        <div class="footer-legal">Clash of Clans Layouts<br><strong>Copyright © 2022</strong></div>
+    </footer>
+
+</html>
